@@ -9,6 +9,14 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+        conditional_layers {
+            compatible = "zmk,conditional-layers";
+            tri_layer {
+                if-layers = <1 2>;
+                then-layer = <3>;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -54,6 +62,21 @@
    &kp ESC    &trans &trans &trans &trans &trans     &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp HOME  &kp END
    &kp LSHFT  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8 &kp F9 &mt F10 F11 &kp F12
                           	        &bt LCTRL &trans &kp SPACE      &kp RET  &trans   &kp LALT
+                        >;
+                };
+
+                modification_layer {
+// -----------------------------------------------------------------------------------------
+// |      |     |     |       |     |     |   |     |     |     |     |     |     |
+// | BTCLR| BT1 | BT2 | BT3   | BT4 | BT5 |   | VOL-| MUTE| VOL+|     |     |     |
+// |      |     |     |       |     |     |   | PREV| PLAY| NEXT|     |     |     |
+//                    |       |     |     |   |     |     |     |
+                        display-name = "Mod";
+                        bindings = <
+   &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans 
+   &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans 
+   &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans 
+                        &trans &trans &trans    &trans &trans &trans 
                         >;
                 };
 
