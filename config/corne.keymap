@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include "../zmk-helpers/international_chars/german_alt.dtsi"
 
 / {
         conditional_layers {
@@ -67,14 +68,14 @@
 
                 modification_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     |     |       |     |     |   |     |     |     |     |     | DEL |
-// | BTCLR| BT1 | BT2 | BT3   | BT4 | BT5 |   | VOL-| MUTE| VOL+|     |     | INS |
+// |      |     |     |       |     |     |   |     |     |     |  ß  |  Ü  | DEL |
+// | BTCLR| BT1 | BT2 | BT3   | BT4 | BT5 |   | VOL-| MUTE| VOL+|  Ö  |  Ä  | INS |
 // |      |     |     |       |     |     |   | PREV| PLAY| NEXT|     |     |     |
 //                    |       |     |     |   |     |     |     |
                         display-name = "Mod";
                         bindings = <
-   &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &kp DEL
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &trans &trans &kp INS
+   &trans &trans &trans &trans &trans &trans    &trans &trans &trans &de_eszett &de_ue &kp DEL
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &de_oe &de_ae &kp INS
    &trans &trans &trans &trans &trans &trans    &kp C_PREV &kp C_PP &kp C_NEXT &trans &trans &trans
                         &trans &trans &trans    &trans &trans &trans
                         >;
