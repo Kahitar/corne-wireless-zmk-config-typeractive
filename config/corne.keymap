@@ -20,21 +20,12 @@
         };
 
         behaviors {
-            german_lt: german_layer_tap {
+            ht_umlaut: hold_tap_umlaut {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 tapping-term-ms = <200>;
-                quick-tap-ms = <150>;
-                global-quick-tap;
                 flavor = "tap-preferred";
-                bindings = <&de_morph>, <&kp>;
-            };
-            
-            de_morph: de_morph {
-                compatible = "zmk,behavior-mod-morph";
-                #binding-cells = <0>;
-                bindings = <&none>, <&kp>;
-                mods = <(MOD_LSFT|MOD_RSFT)>;
+                bindings = <&kp>, <&kp>;
             };
         };
 
@@ -49,8 +40,8 @@
 //                    | CTRL | LWR | SPC |   | ENT | RSE  | ALT |ẞ
                         display-name = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &german_lt de_ue U  &kp I     &german_lt de_oe O   &kp P    &kp BSPC
-   &kp ESC   &german_lt de_ae A &german_lt de_eszett S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &ht_umlaut U de_ue  &kp I     &ht_umlaut O de_oe   &kp P    &kp BSPC
+   &kp ESC   &ht_umlaut A de_ae &ht_umlaut S de_eszett &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LGUI
                   &kp LCTRL &mo 1 &kp SPACE   &kp RET &mo 2 &kp LALT
                         >;
