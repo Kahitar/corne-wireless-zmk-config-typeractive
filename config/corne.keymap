@@ -26,7 +26,35 @@
                 tapping-term-ms = <200>;
                 quick-tap-ms = <150>;
                 flavor = "tap-preferred";
-                bindings = <&kp>, <&kp>;
+                bindings = <&none>, <&kp>;
+            };
+            
+            german_a: german_a {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp A>, <&de_ae>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+            
+            german_o: german_o {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp O>, <&de_oe>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+            
+            german_u: german_u {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp U>, <&de_ue>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+            
+            german_s: german_s {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp S>, <&de_eszett>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
             };
         };
 
@@ -41,8 +69,8 @@
 //                    | CTRL | LWR | SPC |   | ENT | RSE  | ALT |
                         display-name = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &ht de_ue U  &kp I     &ht de_oe O   &kp P    &kp BSPC
-   &kp ESC   &ht de_ae A &ht de_eszett S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &german_u  &kp I     &german_o   &kp P    &kp BSPC
+   &kp ESC   &german_a &german_s &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LGUI
                   &kp LCTRL &mo 1 &kp SPACE   &kp RET &mo 2 &kp LALT
                         >;
