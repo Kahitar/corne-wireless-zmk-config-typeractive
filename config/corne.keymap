@@ -19,19 +19,57 @@
             };
         };
 
+        behaviors {
+            ae: a_umlaut {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
+                quick-tap-ms = <150>;
+                flavor = "tap-preferred";
+                bindings = <&de_ae>, <&kp>;
+            };
+            
+            oe: o_umlaut {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
+                quick-tap-ms = <150>;
+                flavor = "tap-preferred";
+                bindings = <&de_oe>, <&kp>;
+            };
+            
+            ue: u_umlaut {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
+                quick-tap-ms = <150>;
+                flavor = "tap-preferred";
+                bindings = <&de_ue>, <&kp>;
+            };
+            
+            sz: sharp_s {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
+                quick-tap-ms = <150>;
+                flavor = "tap-preferred";
+                bindings = <&de_eszett>, <&kp>;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E   |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// |  ESC |  A  |  S  |  D   |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// |  TAB |  Q  |  W  |  E   |  R  |  T  |   |  Y  | U/Ü  |  I  | O/Ö |  P  | BKSP |
+// |  ESC | A/Ä | S/ß |  D   |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | GUI  |
-//                    | CTRL | LWR | SPC |   | ENT | RSE  | ALT |
+//                    | CTRL | LWR | SPC |   | ENT | RSE  | ALT |ẞ
                         display-name = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp ESC   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &ue 0 U  &kp I     &oe 0 O   &kp P    &kp BSPC
+   &kp ESC   &ae 0 A &sz 0 S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LGUI
                   &kp LCTRL &mo 1 &kp SPACE   &kp RET &mo 2 &kp LALT
                         >;
@@ -79,6 +117,21 @@
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &de_oe &de_ae &kp INS
    &trans &trans &trans &trans &trans &trans    &kp C_PREV &kp C_PP &kp C_NEXT &trans &trans &trans
                         &trans &trans &trans    &trans &trans &trans
+                        >;
+                };
+
+                german_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |     |     |     |     |     |   |     |  Ü  |     |  Ö  |     | BKSP |
+// |  ESC |  Ä  |  ß  |     |     |     |   |     |     |     |     |     |      |
+// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    |     |     |     |   |     |     |     |
+                        display-name = "German";
+                        bindings = <
+   &trans &trans &trans &trans &trans &trans   &trans &de_ue &trans &de_oe &trans &trans
+   &trans &de_ae &de_eszett &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                        &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
