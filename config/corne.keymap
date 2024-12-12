@@ -120,20 +120,5 @@
                         >;
                 };
 
-                german_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |     |     |     |     |     |   |     |  Ü  |     |  Ö  |     | BKSP |
-// |  ESC |  Ä  |  ß  |     |     |     |   |     |     |     |     |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    |     |     |     |   |     |     |     |
-                        display-name = "German";
-                        bindings = <
-   &trans &trans &trans &trans &trans &trans   &trans &de_ue &trans &de_oe &trans &trans
-   &trans &de_ae &de_eszett &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-                        &trans &trans &trans   &trans &trans &trans
-                        >;
-                };
-
         };
 };
