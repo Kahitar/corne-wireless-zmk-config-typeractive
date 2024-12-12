@@ -29,7 +29,7 @@
 // | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | GUI  |
 //                    | CTRL | LWR | SPC |   | ENT | RSE  | ALT |
                         display-name = "Base";
-                        bindings = 
+                        bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &lt 4 U  &kp I     &lt 4 O   &kp P    &kp BSPC
    &kp ESC   &lt 4 A &lt 4 S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LGUI
@@ -74,7 +74,7 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    |     |     |     |   |     |     |     |
                         display-name = "German";
-                        bindings = 
+                        bindings = <
    &trans &trans &trans &trans &trans &trans   &trans &de_ue &trans &de_oe &trans &trans
    &trans &de_ae &de_eszett &trans &trans &trans   &trans &trans &trans &trans &trans &trans
    &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
