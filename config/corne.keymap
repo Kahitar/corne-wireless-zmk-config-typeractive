@@ -20,40 +20,20 @@
         };
 
         behaviors {
-            ht: hold_tap {
+            german_lt: german_layer_tap {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 tapping-term-ms = <200>;
                 quick-tap-ms = <150>;
+                global-quick-tap;
                 flavor = "tap-preferred";
+                bindings = <&de_morph>, <&kp>;
+            };
+            
+            de_morph: de_morph {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
                 bindings = <&none>, <&kp>;
-            };
-            
-            german_a: german_a {
-                compatible = "zmk,behavior-mod-morph";
-                #binding-cells = <0>;
-                bindings = <&kp A>, <&de_ae>;
-                mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-            
-            german_o: german_o {
-                compatible = "zmk,behavior-mod-morph";
-                #binding-cells = <0>;
-                bindings = <&kp O>, <&de_oe>;
-                mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-            
-            german_u: german_u {
-                compatible = "zmk,behavior-mod-morph";
-                #binding-cells = <0>;
-                bindings = <&kp U>, <&de_ue>;
-                mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-            
-            german_s: german_s {
-                compatible = "zmk,behavior-mod-morph";
-                #binding-cells = <0>;
-                bindings = <&kp S>, <&de_eszett>;
                 mods = <(MOD_LSFT|MOD_RSFT)>;
             };
         };
@@ -66,11 +46,11 @@
 // |  TAB |  Q  |  W  |  E   |  R  |  T  |   |  Y  | U/Ü  |  I  | O/Ö |  P  | BKSP |
 // |  ESC | A/Ä | S/ß |  D   |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | GUI  |
-//                    | CTRL | LWR | SPC |   | ENT | RSE  | ALT |
+//                    | CTRL | LWR | SPC |   | ENT | RSE  | ALT |ẞ
                         display-name = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &german_u  &kp I     &german_o   &kp P    &kp BSPC
-   &kp ESC   &german_a &german_s &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &german_lt de_ue U  &kp I     &german_lt de_oe O   &kp P    &kp BSPC
+   &kp ESC   &german_lt de_ae A &german_lt de_eszett S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LGUI
                   &kp LCTRL &mo 1 &kp SPACE   &kp RET &mo 2 &kp LALT
                         >;
