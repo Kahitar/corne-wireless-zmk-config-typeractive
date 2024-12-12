@@ -20,12 +20,40 @@
         };
 
         behaviors {
-            ht_umlaut: hold_tap_umlaut {
+            ae: a_umlaut {
                 compatible = "zmk,behavior-hold-tap";
-                #binding-cells = <2>;
+                #binding-cells = <1>;
                 tapping-term-ms = <200>;
+                quick-tap-ms = <150>;
                 flavor = "tap-preferred";
-                bindings = <&none>, <&kp>;    // Hold action for direct unicode, tap action for normal key press
+                bindings = <&de_ae>, <&kp>;
+            };
+            
+            oe: o_umlaut {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <1>;
+                tapping-term-ms = <200>;
+                quick-tap-ms = <150>;
+                flavor = "tap-preferred";
+                bindings = <&de_oe>, <&kp>;
+            };
+            
+            ue: u_umlaut {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <1>;
+                tapping-term-ms = <200>;
+                quick-tap-ms = <150>;
+                flavor = "tap-preferred";
+                bindings = <&de_ue>, <&kp>;
+            };
+            
+            sz: sharp_s {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <1>;
+                tapping-term-ms = <200>;
+                quick-tap-ms = <150>;
+                flavor = "tap-preferred";
+                bindings = <&de_eszett>, <&kp>;
             };
         };
 
@@ -40,8 +68,8 @@
 //                    | CTRL | LWR | SPC |   | ENT | RSE  | ALT |ẞ
                         display-name = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &ht_umlaut de_ue U  &kp I     &ht_umlaut de_oe O   &kp P    &kp BSPC
-   &kp ESC   &ht_umlaut de_ae A &ht_umlaut de_eszett S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &ue U  &kp I     &oe O   &kp P    &kp BSPC
+   &kp ESC   &ae A &sz S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LGUI
                   &kp LCTRL &mo 1 &kp SPACE   &kp RET &mo 2 &kp LALT
                         >;
