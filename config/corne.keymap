@@ -29,9 +29,9 @@
 // | SHFT |  Z  |  X  |  C   |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | GUI  |
 //                    | CTRL | LWR | SPC |   | ENT | RSE  | ALT |
                         display-name = "Base";
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &mt U de_ue  &kp I     &mt O de_oe   &kp P    &kp BSPC
-   &kp ESC   &mt A de_ae &mt S de_eszett &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+                        bindings = 
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &lt 4 U  &kp I     &lt 4 O   &kp P    &kp BSPC
+   &kp ESC   &lt 4 A &lt 4 S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LGUI
                   &kp LCTRL &mo 1 &kp SPACE   &kp RET &mo 2 &kp LALT
                         >;
@@ -64,6 +64,21 @@
    &kp ESC    &trans &trans &trans &trans &trans     &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp HOME  &kp END
    &kp LSHFT  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8 &kp F9 &mt F10 F11 &kp F12
                           	        &kp LCTRL &trans &kp SPACE      &kp RET  &trans   &kp LALT
+                        >;
+                };
+
+                german_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |     |     |     |     |     |   |     |  Ü  |     |  Ö  |     | BKSP |
+// |  ESC |  Ä  |  ß  |     |     |     |   |     |     |     |     |     |      |
+// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    |     |     |     |   |     |     |     |
+                        display-name = "German";
+                        bindings = 
+   &trans &trans &trans &trans &trans &trans   &trans &de_ue &trans &de_oe &trans &trans
+   &trans &de_ae &de_eszett &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                        &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
