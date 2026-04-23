@@ -7,6 +7,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+
+/* Use macOS Unicode Hex Input. For Windows/WinCompose, remove this define or set HOST_OS to 0. */
+#define HOST_OS 2
 #include "../zmk-helpers/helper.h"
 #include "../zmk-helpers/international_chars/german.dtsi"
 
